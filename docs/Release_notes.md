@@ -3,12 +3,13 @@
 ## Version 1.2.0, April 2026
 
 This release adds support for client applications in restricted environments that are unable to
-retrieve the JSON schemas from Github over the thed internet, by embedding the schemas in the resources 
-of the `jpo-j2735-2024` library JAR.  Clients with no internet access, or with restricted access, such as IPv6 only access, may retrieve them as resources from the JAR.
+retrieve the JSON schemas from GitHub over the internet, by embedding the schemas in the resources 
+of the `jpo-asn-j2735-2024` library JAR.  Clients with no internet access, or with restricted 
+access, such as IPv6 only access, may retrieve them as resources from the JAR.
 
 Includes one new feature:
 
-* [json schemas in resources](https://github.com/neaeraconsulting/jpo-asn-pojos/pull/1)
+* [JSON schemas in resources](https://github.com/neaeraconsulting/jpo-asn-pojos/pull/1)
 
 ## Version 1.1.0, released October 2025
 
