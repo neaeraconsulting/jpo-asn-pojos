@@ -110,6 +110,8 @@ fabric.properties
 # Idea copilot files
 .idea/copilot.*
 
+.profileconfig.json
+
 ####################################################################################################
 # VSCode Ignores
 # Ref. https://github.com/github/gitignore/blob/main/Global/VisualStudioCode.gitignore
