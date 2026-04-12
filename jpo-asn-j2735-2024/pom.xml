@@ -57,7 +57,8 @@
 
   <properties>
     <java.version>21</java.version>
-    <maven.compiler.release>21</maven.compiler.release>
+    <maven.compiler.source>21</maven.compiler.source>
+    <maven.compiler.target>21</maven.compiler.target>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
   </properties>
@@ -103,7 +104,7 @@
       <version>2.0.5</version>
     </dependency>
     <dependency>
-      <groupId>usdot.jpo.asn</groupId>
+      <groupId>io.github.iyourshaw</groupId>
       <artifactId>jpo-asn-runtime</artifactId>
       <version>1.2.0-beta1-SNAPSHOT</version>
     </dependency>
@@ -191,6 +192,7 @@
               <goal>sign</goal>
             </goals>
             <configuration>
+              <bestPractices>true</bestPractices>
               <gpgArguments>
                 <arg>--pinentry-mode</arg>
                 <arg>loopback</arg>
