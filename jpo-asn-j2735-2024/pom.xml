@@ -106,7 +106,7 @@
     <dependency>
       <groupId>io.github.iyourshaw</groupId>
       <artifactId>jpo-asn-runtime</artifactId>
-      <version>1.2.0-beta1-SNAPSHOT</version>
+      <version>1.2.0-beta1</version>
     </dependency>
 
     <!-- Test dependencies -->
