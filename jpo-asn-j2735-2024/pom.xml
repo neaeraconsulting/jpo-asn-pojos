@@ -5,19 +5,61 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>usdot.jpo.asn</groupId>
+  <groupId>io.github.iyourshaw</groupId>
   <artifactId>jpo-asn-j2735-2024</artifactId>
-  <version>1.2.0</version>
+  <version>1.2.0-beta1-SNAPSHOT</version>
 
   <name>jpo-asn-j2735-2024</name>
   <description>J2735/2024 POJO library</description>
+  <url>https://github.com/iyourshaw/jpo-asn-pojos</url>
 
+  <licenses>
+    <license>
+      <name>Apache 2.0 License</name>
+      <url>https://www.apache.org/licenses/LICENSE-2.0.html</url>
+    </license>
+  </licenses>
+
+  <developers>
+    <developer>
+      <id>iyourshaw</id>
+      <name>Ivan Yourshaw</name>
+      <email>opensource@iymaps.com</email>
+      <organization>Neaera Consulting</organization>
+      <organizationUrl>https://neaeraconsulting.com/</organizationUrl>
+    </developer>
+  </developers>
+
+  <contributors>
+    <contributor>
+      <name>Drew Johnston</name>
+      <organization>Neaera Consulting</organization>
+    </contributor>
+    <contributor>
+      <name>Michael English</name>
+      <organization>Neaera Consulting</organization>
+    </contributor>
+    <contributor>
+      <name>Matt Cook</name>
+      <organization>Trihydro</organization>
+    </contributor>
+    <contributor>
+      <name>Brandon Payne</name>
+      <organization>Trihydro</organization>
+    </contributor>
+  </contributors>
+
+  <scm>
+    <connection>scm:git:https://github.com/iyourshaw/jpo-asn-pojos.git</connection>
+    <developerConnection>scm:git:https://github.com/iyourshaw/jpo-asn-pojos.git</developerConnection>
+    <url>https://github.com/iyourshaw/jpo-asn-pojos.git</url>
+  </scm>
 
   <properties>
+    <java.version>21</java.version>
+    <maven.compiler.release>21</maven.compiler.release>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <maven.compiler.source>21</maven.compiler.source>
-    <maven.compiler.target>21</maven.compiler.target>
-    <github_organization>usdot-jpo-ode</github_organization>
+    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
   </properties>
 
   <dependencies>
@@ -63,7 +105,7 @@
     <dependency>
       <groupId>usdot.jpo.asn</groupId>
       <artifactId>jpo-asn-runtime</artifactId>
-      <version>1.2.0</version>
+      <version>1.2.0-beta1-SNAPSHOT</version>
     </dependency>
 
     <!-- Test dependencies -->
@@ -108,6 +150,66 @@
 
   <build>
     <plugins>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-source-plugin</artifactId>
+        <version>3.4.0</version>
+        <executions>
+          <execution>
+            <id>attach-sources</id>
+            <goals>
+              <goal>jar-no-fork</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-javadoc-plugin</artifactId>
+        <version>3.12.0</version>
+        <executions>
+          <execution>
+            <id>attach-javadoc</id>
+            <goals>
+              <goal>jar</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-gpg-plugin</artifactId>
+        <version>3.2.8</version>
+        <executions>
+          <execution>
+            <id>sign-artifacts</id>
+            <phase>verify</phase>
+            <goals>
+              <goal>sign</goal>
+            </goals>
+            <configuration>
+              <gpgArguments>
+                <arg>--pinentry-mode</arg>
+                <arg>loopback</arg>
+              </gpgArguments>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+
+      <plugin>
+        <groupId>org.sonatype.central</groupId>
+        <artifactId>central-publishing-maven-plugin</artifactId>
+        <version>0.10.0</version>
+        <extensions>true</extensions>
+        <configuration>
+          <publishingServerId>central</publishingServerId>
+        </configuration>
+      </plugin>
+
       <plugin>
         <groupId>org.jacoco</groupId>
         <artifactId>jacoco-maven-plugin</artifactId>
@@ -136,11 +238,4 @@
     </plugins>
   </build>
 
-  <distributionManagement>
-    <repository>
-      <id>github</id>
-      <name>GitHub Packages</name>
-      <url>https://maven.pkg.github.com/${github_organization}/jpo-ode</url>
-    </repository>
-  </distributionManagement>
 </project>

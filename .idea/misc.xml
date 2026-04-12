@@ -9,6 +9,13 @@
     <file type="web" url="file://$PROJECT_DIR$/jpo-asn-runtime" />
     <file type="web" url="file://$PROJECT_DIR$/jpo-asn-test-generator" />
   </component>
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/pom.xml" />
+      </list>
+    </option>
+  </component>
   <component name="PWA">
     <option name="wasEnabledAtLeastOnce" value="true" />
   </component>
