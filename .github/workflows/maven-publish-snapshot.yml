@@ -33,7 +33,7 @@ jobs:
         if: ${{ !endsWith(steps.get_version.outputs.RUNTIME_VERSION, '-SNAPSHOT' ) }}
 
       - name: Publish package (runtime)
-        run: mvn -P release --batch-mode central-publishing:publish --projects :jpo-asn-runtime
+        run: mvn -P release --batch-mode deploy --projects :jpo-asn-runtime
         env:
           MAVEN_USERNAME: ${{ secrets.CENTRAL_TOKEN_USERNAME }}
           MAVEN_PASSWORD: ${{ secrets.CENTRAL_TOKEN_PASSWORD }}
