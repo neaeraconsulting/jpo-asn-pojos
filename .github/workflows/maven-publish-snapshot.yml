@@ -21,27 +21,27 @@ jobs:
           gpg-passphrase: MAVEN_GPG_PASSPHRASE
 
       - name: Get Maven version (runtime)
-        id: get_version
+        id: get_runtime_version
         run: echo "RUNTIME_VERSION=$(mvn help:evaluate --projects :jpo-asn-runtime -Dexpression=project.version -q -DforceStdout)" >> $GITHUB_OUTPUT
 
       - name: Get Maven version (pojos)
-        id: get_version
+        id: get_pojos_version
         run: echo "POJOS_VERSION=$(mvn help:evaluate --projects :jpo-asn-j2735-2024 -Dexpression=project.version -q -DforceStdout)" >> $GITHUB_OUTPUT
 
       - name: Echo Maven version (runtime)
-        run: echo "The runtime version is ${{ steps.get_version.outputs.RUNTIME_VERSION }}"
+        run: echo "The runtime version is ${{ steps.get_runtime_version.outputs.RUNTIME_VERSION }}"
 
       - name: Echo Maven version (pojos)
-        run: echo "The runtime version is ${{ steps.get_version.outputs.POJOS_VERSION }}"
+        run: echo "The runtime version is ${{ steps.get_pojos_version.outputs.POJOS_VERSION }}"
 
       # Append "-SNAPSHOT" to version if not already present
       - name: Ensure Snapshot Version (runtime)
-        run: mvn versions:set --projects :jpo-asn-runtime -DnewVersion=${{ format('{0}-{1}', steps.get_version.outputs.RUNTIME_VERSION, 'SNAPSHOT') }}
-        if: ${{ !endsWith(steps.get_version.outputs.RUNTIME_VERSION, '-SNAPSHOT' ) }}
+        run: mvn versions:set --projects :jpo-asn-runtime -DnewVersion=${{ format('{0}-{1}', steps.get_runtime_version.outputs.RUNTIME_VERSION, 'SNAPSHOT') }}
+        if: ${{ !endsWith(steps.get_runtime_version.outputs.RUNTIME_VERSION, '-SNAPSHOT' ) }}
 
       - name: Ensure Snapshot Version (pojos)
-        run: mvn versions:set --projects :jpo-asn-j2735-2024 -DnewVersion=${{ format('{0}-{1}', steps.get_version.outputs.POJOS_VERSION, 'SNAPSHOT') }}
-        if: ${{ !endsWith(steps.get_version.outputs.POJOS_VERSION, '-SNAPSHOT' ) }}
+        run: mvn versions:set --projects :jpo-asn-j2735-2024 -DnewVersion=${{ format('{0}-{1}', steps.get_pojos_version.outputs.POJOS_VERSION, 'SNAPSHOT') }}
+        if: ${{ !endsWith(steps.get_pojos_version.outputs.POJOS_VERSION, '-SNAPSHOT' ) }}
 
       - name: Publish package (runtime)
         run: mvn -P release --batch-mode deploy --projects :jpo-asn-runtime
