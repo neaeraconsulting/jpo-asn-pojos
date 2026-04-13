@@ -135,8 +135,80 @@ project's root directory.
 
 ### Use as a Maven Dependency
 
-TBD. The library JARs will be deployed to Github Maven, and hopefully Maven Central, in the future, 
-but in the near term this repo is intended to be incorporated as a submodule into the ODE.
+The library releases are deployed to Maven Central and development snapshots are deployed to Central Portal.
+
+To consume the release from Maven Central, add a dependency to `pom.xml` (or configure equivalently
+for Gradle):
+
+```xml
+<dependency>
+    <dependency>
+        <groupId>io.github.iyourshaw</groupId>
+        <artifactId>jpo-asn-runtime</artifactId>
+        <version>1.2.0-beta1</version>
+    </dependency>
+    <dependency>
+        <groupId>io.github.iyourshaw</groupId>
+        <artifactId>jpo-asn-j2735-2024</artifactId>
+        <version>1.2.0-beta1</version>
+    </dependency>
+</dependency>
+```
+No further configuration is needed to consume the releases from Central.
+
+To consume the prerelease snapshots of the `develop` branch, add the Central Portal snapshot repository to `pom.xml`:
+
+```xml
+<repositories>
+  <repository>
+    <name>Central Portal Snapshots</name>
+    <id>central-portal-snapshots</id>
+    <url>https://central.sonatype.com/repository/maven-snapshots/</url>
+    <releases>
+      <enabled>false</enabled>
+    </releases>
+    <snapshots>
+      <enabled>true</enabled>
+    </snapshots>
+  </repository>
+</repositories>
+```
+
+or to `gradle.build`:
+
+```groovy
+repositories {
+  maven {
+    name = 'Central Portal Snapshots'
+    url = 'https://central.sonatype.com/repository/maven-snapshots/'
+
+    // Only search this repository for the specific dependency
+    content {
+      includeModule("<the snapshot's groupId>", "<the snapshot's artifactId>")
+    }
+  }
+  mavenCentral()
+}
+```
+
+and add the dependencies to the "SNAPSHOT" version:
+
+```xml
+<dependency>
+    <dependency>
+        <groupId>io.github.iyourshaw</groupId>
+        <artifactId>jpo-asn-runtime</artifactId>
+        <version>1.2.0-beta1-SNAPSHOT</version>
+    </dependency>
+    <dependency>
+        <groupId>io.github.iyourshaw</groupId>
+        <artifactId>jpo-asn-j2735-2024</artifactId>
+        <version>1.2.0-beta1-SNAPSHOT</version>
+    </dependency>
+</dependency>
+```
+
+Refer to the [Sonatype documentation for Central Portal snapshots](https://central.sonatype.org/publish/publish-portal-snapshots/#consuming-snapshot-releases-for-your-project)
 
 ## Usage
 
