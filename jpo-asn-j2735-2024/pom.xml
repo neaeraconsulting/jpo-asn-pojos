@@ -11,7 +11,7 @@
 
   <name>jpo-asn-j2735-2024</name>
   <description>J2735/2024 POJO library</description>
-  <url>https://github.com/iyourshaw/jpo-asn-pojos</url>
+  <url>https://github.com/neaeraconsulting/jpo-asn-pojos</url>
 
   <licenses>
     <license>
@@ -50,9 +50,9 @@
   </contributors>
 
   <scm>
-    <connection>scm:git:https://github.com/iyourshaw/jpo-asn-pojos.git</connection>
-    <developerConnection>scm:git:https://github.com/iyourshaw/jpo-asn-pojos.git</developerConnection>
-    <url>https://github.com/iyourshaw/jpo-asn-pojos.git</url>
+    <connection>scm:git:https://github.com/neaeraconsulting/jpo-asn-pojos.git</connection>
+    <developerConnection>scm:git:https://github.com/neaeraconsulting/jpo-asn-pojos.git</developerConnection>
+    <url>https://github.com/neaeraconsulting/jpo-asn-pojos.git</url>
   </scm>
 
   <properties>

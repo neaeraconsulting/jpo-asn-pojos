@@ -11,7 +11,7 @@
 
   <name>jpo-asn-runtime</name>
   <description>Runtime library and base classes for ASN.1 POJOs</description>
-  <url>https://github.com/iyourshaw/jpo-asn-pojos</url>
+  <url>https://github.com/neaeraconsulting/jpo-asn-pojos</url>
 
   <licenses>
     <license>
@@ -50,9 +50,9 @@
   </contributors>
 
   <scm>
-    <connection>scm:git:https://github.com/iyourshaw/jpo-asn-pojos.git</connection>
-    <developerConnection>scm:git:https://github.com/iyourshaw/jpo-asn-pojos.git</developerConnection>
-    <url>https://github.com/iyourshaw/jpo-asn-pojos.git</url>
+    <connection>scm:git:https://github.com/neaeraconsulting/jpo-asn-pojos.git</connection>
+    <developerConnection>scm:git:https://github.com/neaeraconsulting/jpo-asn-pojos.git</developerConnection>
+    <url>https://github.com/neaeraconsulting/jpo-asn-pojos.git</url>
   </scm>
 
   <properties>

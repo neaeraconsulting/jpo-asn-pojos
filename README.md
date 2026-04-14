@@ -144,12 +144,12 @@ for Gradle):
 ```xml
 <dependency>
     <dependency>
-        <groupId>io.github.iyourshaw</groupId>
+        <groupId>com.neaeraconsulting</groupId>
         <artifactId>jpo-asn-runtime</artifactId>
         <version>1.2.0-beta1</version>
     </dependency>
     <dependency>
-        <groupId>io.github.iyourshaw</groupId>
+        <groupId>com.neaeraconsulting</groupId>
         <artifactId>jpo-asn-j2735-2024</artifactId>
         <version>1.2.0-beta1</version>
     </dependency>
@@ -198,12 +198,12 @@ and add the dependencies to the "SNAPSHOT" version:
 ```xml
 <dependency>
     <dependency>
-        <groupId>io.github.iyourshaw</groupId>
+        <groupId>com.neaeraconsulting</groupId>
         <artifactId>jpo-asn-runtime</artifactId>
         <version>1.2.0-beta1-SNAPSHOT</version>
     </dependency>
     <dependency>
-        <groupId>io.github.iyourshaw</groupId>
+        <groupId>com.neaeraconsulting</groupId>
         <artifactId>jpo-asn-j2735-2024</artifactId>
         <version>1.2.0-beta1-SNAPSHOT</version>
     </dependency>
