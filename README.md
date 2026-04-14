@@ -135,7 +135,8 @@ project's root directory.
 
 ### Use as a Maven Dependency
 
-The library releases are deployed to Maven Central and development snapshots are deployed to Central Portal.
+The library releases are deployed to Maven Central and development snapshots are deployed to Central
+Portal.
 
 To consume the release from Maven Central, add a dependency to `pom.xml` (or configure equivalently
 for Gradle):
@@ -156,7 +157,8 @@ for Gradle):
 ```
 No further configuration is needed to consume the releases from Central.
 
-To consume the prerelease snapshots of the `develop` branch, add the Central Portal snapshot repository to `pom.xml`:
+To consume the prerelease snapshots from the `snapshot` branch, add the Central Portal snapshot
+repository to `pom.xml`:
 
 ```xml
 <repositories>

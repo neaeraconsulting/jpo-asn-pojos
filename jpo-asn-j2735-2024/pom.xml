@@ -7,7 +7,7 @@
 
   <groupId>com.neaeraconsulting</groupId>
   <artifactId>jpo-asn-j2735-2024</artifactId>
-  <version>1.2.0-beta1</version>
+  <version>1.2.0-beta1-SNAPSHOT</version>
 
   <name>jpo-asn-j2735-2024</name>
   <description>J2735/2024 POJO library</description>
@@ -106,7 +106,7 @@
     <dependency>
       <groupId>com.neaeraconsulting</groupId>
       <artifactId>jpo-asn-runtime</artifactId>
-      <version>1.2.0-beta1</version>
+      <version>1.2.0-beta1-SNAPSHOT</version>
     </dependency>
 
     <!-- Test dependencies -->

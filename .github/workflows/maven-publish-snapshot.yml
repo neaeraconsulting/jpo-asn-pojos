@@ -3,7 +3,7 @@ name: Publish JARs to the Maven Central Repository (Snapshots)
 on:
   push:
     branches:
-      - develop
+      - snapshot
 jobs:
   publish:
     runs-on: ubuntu-latest
