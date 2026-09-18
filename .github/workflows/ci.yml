@@ -102,7 +102,7 @@ jobs:
 
   sonar:
     needs: test
-    if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.pull_request.head.repo.owner.login == 'usdot-jpo-ode')
+    if: ${{ github.repository_owner == 'usdot-jpo-ode' && (github.event_name == 'push' || github.event_name == 'pull_request') }}
     runs-on: ubuntu-latest
 
     steps:
