@@ -12,7 +12,7 @@ plugins {
     id 'jacoco'
 }
 
-group = 'usdot.jpo.asn'
+group = 'com.neaeraconsulting'
 version = '2.0.0-beta1-SNAPSHOT'
 
 repositories {
