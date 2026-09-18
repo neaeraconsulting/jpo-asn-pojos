@@ -89,63 +89,9 @@ To run tests using Maven, from the root directory:
 
 ## Installation
 
-### Use as a Submodule
-
-To add the repository as a submodule to another project that uses it as a library, follow these
-steps:
-
-1. **Add the submodule to your project:**
-   Navigate to the root directory of your project and run the following command to add the
-   submodule:
-   ```bash
-   git submodule add https://github.com/usdot-jpo-ode/jpo-asn-pojos.git
-   ```
-
-2. **Initialize and update the submodule:**
-   After adding the submodule, initialize and update it with the following commands:
-   ```bash
-   git submodule update --init
-   ```
-
-3. **Include the submodule in your build configuration:**
-
-- **For Gradle:**
-  Add the following to your `settings.gradle` file to include the submodule:
-  ```groovy
-  includeBuild('path/to/jpo-asn-pojos/jpo-asn-j2735-2024')
-  ```
-
-  Then, add the dependencies in your `build.gradle` file:
-  ```groovy
-  dependencies {
-      implementation('usdot.jpo.asn:jpo-asn-j2735-2024')
-  }
-  ```
-
-- **For Maven:**
-  Add the submodule as a module in your `pom.xml` file:
-  ```xml
-  <modules>
-      <module>path/to/jpo-asn-pojos</module>
-  </modules>
-  ```
-
-  Then, add the dependencies in your `pom.xml` file:
-  ```xml
-  <dependency>
-      <groupId>usdot.jpo.asn</groupId>
-      <artifactId>jpo-asn-j2735-2024</artifactId>
-      <version>2.0.0</version>
-  </dependency>
-  ```
-
-Replace `path/to/jpo-asn-pojos` with the actual path to the submodule directory relative to your
-project's root directory.
-
 ### Use as a Maven Dependency
 
-The library releases are deployed to Maven Central and development snapshots are deployed to Central
-Portal.
+The library releases are deployed to Maven Central.
 
 To consume the release from Maven Central, add a dependency to `pom.xml` (or configure equivalently
 for Gradle):
@@ -155,18 +101,18 @@ for Gradle):
     <dependency>
         <groupId>com.neaeraconsulting</groupId>
         <artifactId>jpo-asn-runtime</artifactId>
-        <version>1.2.0-beta1</version>
+        <version>2.0.0-beta1</version>
     </dependency>
     <dependency>
         <groupId>com.neaeraconsulting</groupId>
         <artifactId>jpo-asn-j2735-2024</artifactId>
-        <version>1.2.0-beta1</version>
+        <version>2.0.0-beta1</version>
     </dependency>
 </dependency>
 ```
 No further configuration is needed to consume the releases from Central.
 
-To consume the prerelease snapshots from the `snapshot` branch, add the Central Portal snapshot
+To consume the prerelease snapshots, add the Central Portal snapshot
 repository to `pom.xml`:
 
 ```xml
@@ -209,17 +155,72 @@ and add the dependencies to the "SNAPSHOT" version:
     <dependency>
         <groupId>com.neaeraconsulting</groupId>
         <artifactId>jpo-asn-runtime</artifactId>
-        <version>1.2.0-beta1-SNAPSHOT</version>
+        <version>2.0.0-beta1-SNAPSHOT</version>
     </dependency>
     <dependency>
         <groupId>com.neaeraconsulting</groupId>
         <artifactId>jpo-asn-j2735-2024</artifactId>
-        <version>1.2.0-beta1-SNAPSHOT</version>
+        <version>2.0.0-beta1-SNAPSHOT</version>
     </dependency>
 </dependency>
 ```
 
 Refer to the [Sonatype documentation for Central Portal snapshots](https://central.sonatype.org/publish/publish-portal-snapshots/#consuming-snapshot-releases-for-your-project)
+
+### Use as a Submodule
+
+To add the repository as a submodule to another project that uses it as a library, follow these
+steps:
+
+1. **Add the submodule to your project:**
+   Navigate to the root directory of your project and run the following command to add the
+   submodule:
+   ```bash
+   git submodule add https://github.com/usdot-jpo-ode/jpo-asn-pojos.git
+   ```
+
+2. **Initialize and update the submodule:**
+   After adding the submodule, initialize and update it with the following commands:
+   ```bash
+   git submodule update --init
+   ```
+
+3. **Include the submodule in your build configuration:**
+
+- **For Gradle:**
+  Add the following to your `settings.gradle` file to include the submodule:
+  ```groovy
+  includeBuild('path/to/jpo-asn-pojos/jpo-asn-j2735-2024')
+  ```
+
+  Then, add the dependencies in your `build.gradle` file:
+  ```groovy
+  dependencies {
+      implementation('com.neaeraconsulting:jpo-asn-j2735-2024')
+  }
+  ```
+
+- **For Maven:**
+  Add the submodule as a module in your `pom.xml` file:
+  ```xml
+  <modules>
+      <module>path/to/jpo-asn-pojos</module>
+  </modules>
+  ```
+
+  Then, add the dependencies in your `pom.xml` file:
+  ```xml
+  <dependency>
+      <groupId>com.neaeraconsulting</groupId>
+      <artifactId>jpo-asn-j2735-2024</artifactId>
+      <version>2.0.0-beta1</version>
+  </dependency>
+  ```
+
+Replace `path/to/jpo-asn-pojos` with the actual path to the submodule directory relative to your
+project's root directory.
+
+
 
 ## Usage
 
