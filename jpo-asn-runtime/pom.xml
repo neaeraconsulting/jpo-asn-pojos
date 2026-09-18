@@ -7,7 +7,7 @@
 
   <groupId>com.neaeraconsulting</groupId>
   <artifactId>jpo-asn-runtime</artifactId>
-  <version>2.0.0</version>
+  <version>2.0.0-beta1</version>
 
   <name>jpo-asn-runtime</name>
   <description>Runtime library and base classes for ASN.1 POJOs</description>
@@ -75,7 +75,7 @@
     <dependency>
       <groupId>com.fasterxml.jackson.dataformat</groupId>
       <artifactId>jackson-dataformat-xml</artifactId>
-      <version>2.17.2</version>
+      <version>2.22.2</version>
     </dependency>
     <dependency>
       <groupId>org.apache.commons</groupId>
