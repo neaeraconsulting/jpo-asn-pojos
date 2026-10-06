@@ -1,5 +1,14 @@
 # jpo-asn-pojos Release Notes
 
+## Version 2.0.0, Java 25 compatibility
+
+This release requires JDK 25 or newer for consumers of the `jpo-asn-runtime` and
+`jpo-asn-j2735-2024` libraries. The Maven and Gradle library versions were incremented to
+2.0.0 because Java 25 class files are not compatible with Java 21 runtimes.
+
+The build also updates Lombok annotation processing, JaCoCo, Gradle, and the repository CI
+toolchain for Java 25.
+
 ## Version 1.2.0, April 2026
 
 This release adds support for client applications in restricted environments that are unable to

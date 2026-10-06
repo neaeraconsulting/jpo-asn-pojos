@@ -11,7 +11,7 @@ plugins {
     id("io.freefair.lombok") version "8.12.1"
     id 'jacoco'
     id 'jacoco-report-aggregation'
-    id 'com.gradleup.shadow' version '8.3.6'
+    id 'com.gradleup.shadow' version '8.3.11'
 }
 
 ext {
@@ -24,6 +24,8 @@ repositories {
 }
 
 dependencies {
+    lombok 'org.projectlombok:lombok:1.18.40'
+
     // Use JUnit Jupiter for testing.
     testImplementation libs.junit.jupiter
     testImplementation 'org.hamcrest:hamcrest:2.2'
@@ -33,8 +35,8 @@ dependencies {
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 
     implementation 'info.picocli:picocli:4.7.6'
-    implementation 'usdot.jpo.asn:jpo-asn-runtime'
-    implementation 'usdot.jpo.asn:jpo-asn-j2735-2024'
+    implementation 'com.neaeraconsulting:jpo-asn-runtime'
+    implementation 'com.neaeraconsulting:jpo-asn-j2735-2024'
     implementation "com.github.victools:jsonschema-generator:${jsonSchemaGeneratorVersion}"
     implementation "com.github.victools:jsonschema-module-jackson:${jsonSchemaGeneratorVersion}"
     implementation 'commons-io:commons-io:2.18.0'
@@ -49,7 +51,7 @@ dependencies {
 // Apply a specific Java toolchain to ease working on different environments.
 java {
     toolchain {
-        languageVersion = JavaLanguageVersion.of(21)
+        languageVersion = JavaLanguageVersion.of(25)
     }
 }
 
