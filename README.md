@@ -46,8 +46,14 @@ serializers/deserializers for ASN.1 types.
 
 ### Prerequisites
 
-* JDK 21 or higher
-* Gradle or Maven
+The current release requires JDK 25+. Use the included Gradle (`./gradlew`) and Maven (`./mvnw`) wrappers; they pin the tested tool versions for this checkout. Older published releases used the toolchain below.
+
+| Release | JDK | Gradle | Maven |
+|---------|-----|--------|-------|
+| 2.0.0   | 25+ | 9.1.0  | 3.9.9 |
+| 1.2.0   | 21+ | 8.10.2 | 3.9.9 |
+| 1.1.0   | 21+ | 8.10.2 | 3.9.9 |
+| 1.0.0   | 21+ | 8.10.2 | 3.9.9 |
 
 ### Build
 
@@ -83,6 +89,84 @@ To run tests using Maven, from the root directory:
 
 ## Installation
 
+### Use as a Maven Dependency
+
+The library releases are deployed to Maven Central.
+
+To consume the release from Maven Central, add a dependency to `pom.xml` (or configure equivalently
+for Gradle):
+
+```xml
+<dependency>
+    <dependency>
+        <groupId>com.neaeraconsulting</groupId>
+        <artifactId>jpo-asn-runtime</artifactId>
+        <version>2.0.0-beta1</version>
+    </dependency>
+    <dependency>
+        <groupId>com.neaeraconsulting</groupId>
+        <artifactId>jpo-asn-j2735-2024</artifactId>
+        <version>2.0.0-beta1</version>
+    </dependency>
+</dependency>
+```
+No further configuration is needed to consume the releases from Central.
+
+To consume the prerelease snapshots, add the Central Portal snapshot
+repository to `pom.xml`:
+
+```xml
+<repositories>
+  <repository>
+    <name>Central Portal Snapshots</name>
+    <id>central-portal-snapshots</id>
+    <url>https://central.sonatype.com/repository/maven-snapshots/</url>
+    <releases>
+      <enabled>false</enabled>
+    </releases>
+    <snapshots>
+      <enabled>true</enabled>
+    </snapshots>
+  </repository>
+</repositories>
+```
+
+or to `gradle.build`:
+
+```groovy
+repositories {
+  maven {
+    name = 'Central Portal Snapshots'
+    url = 'https://central.sonatype.com/repository/maven-snapshots/'
+
+    // Only search this repository for the specific dependency
+    content {
+      includeModule("<the snapshot's groupId>", "<the snapshot's artifactId>")
+    }
+  }
+  mavenCentral()
+}
+```
+
+and add the dependencies to the "SNAPSHOT" version:
+
+```xml
+<dependency>
+    <dependency>
+        <groupId>com.neaeraconsulting</groupId>
+        <artifactId>jpo-asn-runtime</artifactId>
+        <version>2.0.0-beta1-SNAPSHOT</version>
+    </dependency>
+    <dependency>
+        <groupId>com.neaeraconsulting</groupId>
+        <artifactId>jpo-asn-j2735-2024</artifactId>
+        <version>2.0.0-beta1-SNAPSHOT</version>
+    </dependency>
+</dependency>
+```
+
+Refer to the [Sonatype documentation for Central Portal snapshots](https://central.sonatype.org/publish/publish-portal-snapshots/#consuming-snapshot-releases-for-your-project)
+
 ### Use as a Submodule
 
 To add the repository as a submodule to another project that uses it as a library, follow these
@@ -112,7 +196,7 @@ steps:
   Then, add the dependencies in your `build.gradle` file:
   ```groovy
   dependencies {
-      implementation('usdot.jpo.asn:jpo-asn-j2735-2024')
+      implementation('com.neaeraconsulting:jpo-asn-j2735-2024')
   }
   ```
 
@@ -127,19 +211,16 @@ steps:
   Then, add the dependencies in your `pom.xml` file:
   ```xml
   <dependency>
-      <groupId>usdot.jpo.asn</groupId>
+      <groupId>com.neaeraconsulting</groupId>
       <artifactId>jpo-asn-j2735-2024</artifactId>
-      <version>1.1.0</version>
+      <version>2.0.0-beta1</version>
   </dependency>
   ```
 
 Replace `path/to/jpo-asn-pojos` with the actual path to the submodule directory relative to your
 project's root directory.
 
-### Use as a Maven Dependency
 
-TBD. The library JARs will be deployed to Github Maven, and hopefully Maven Central, in the future, 
-but in the near term this repo is intended to be incorporated as a submodule into the ODE.
 
 ## Usage
 
@@ -156,6 +237,5 @@ and submit a corresponding pull request for any enhancements or bug fixes.
 ## License
 
 This project is licensed under the Apache 2 License - see the [LICENSE](LICENSE) file for details.
-
 
 

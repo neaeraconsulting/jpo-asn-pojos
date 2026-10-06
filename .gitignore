@@ -70,6 +70,8 @@ gradle-app.setting
 .idea/modules
 *.iml
 *.ipr
+.idea/.name
+.idea/remote-targets.xml
 
 # CMake
 cmake-build-*/

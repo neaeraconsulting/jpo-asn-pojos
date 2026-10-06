@@ -8,12 +8,12 @@
 plugins {
     // Apply the java-library plugin for API and implementation separation.
     id 'java-library'
-    id("io.freefair.lombok") version "8.11"
+    id("io.freefair.lombok") version "8.12.1"
     id 'jacoco'
 }
 
-group = 'usdot.jpo.asn'
-version = '1.2.0'
+group = 'com.neaeraconsulting'
+version = '2.0.0-beta1'
 
 repositories {
     // Use Maven Central for resolving dependencies.
@@ -21,12 +21,14 @@ repositories {
 }
 
 dependencies {
+    lombok 'org.projectlombok:lombok:1.18.40'
+
     // Use JUnit Jupiter for testing.
     testImplementation libs.junit.jupiter
 
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 
-    api 'com.fasterxml.jackson.dataformat:jackson-dataformat-xml:2.17.2'
+    api 'com.fasterxml.jackson.dataformat:jackson-dataformat-xml:2.22.2'
     api 'org.apache.commons:commons-lang3:3.18.0'
     api 'org.apache.commons:commons-text:1.14.0'
 
@@ -45,7 +47,7 @@ dependencies {
 // Apply a specific Java toolchain to ease working on different environments.
 java {
     toolchain {
-        languageVersion = JavaLanguageVersion.of(21)
+        languageVersion = JavaLanguageVersion.of(25)
     }
 }
 
